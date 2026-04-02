@@ -1,7 +1,7 @@
 package az.edu.ada.wm2.lab6.model.mapper;
 
-import az.edu.ada.wm2.lab6.model.Category;
 import az.edu.ada.wm2.lab6.model.dto.CategoryRequestDto;
+import az.edu.ada.wm2.lab6.model.Category;
 import az.edu.ada.wm2.lab6.model.dto.CategoryResponseDto;
 
 import java.util.UUID;

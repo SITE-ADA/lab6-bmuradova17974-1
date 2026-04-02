@@ -7,23 +7,19 @@ import az.edu.ada.wm2.lab6.model.dto.ProductResponseDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import java.util.Set;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface ProductMapper {
 
-    // Entity → Response DTO
     @Mapping(target = "categoryNames", source = "categories")
     ProductResponseDto toResponseDto(Product product);
 
-    // Request DTO → Entity
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "categories", ignore = true)
     Product toEntity(ProductRequestDto dto);
 
-    // Custom mapping
-    default List<String> mapCategoriesToNames(Set<Category> categories) {
+    default List<String> mapCategoriesToNames(List<Category> categories) {
         if (categories == null) {
             return List.of();
         }
